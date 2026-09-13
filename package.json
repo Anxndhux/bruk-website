@@ -4,7 +4,6 @@
   "description": "BRUK Game Website",
   "main": "server.js",
   "scripts": {
-    "build": "echo Ready",
     "dev": "node server.js",
     "start": "node server.js"
   },
