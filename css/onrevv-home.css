@@ -1032,38 +1032,31 @@
 .bruk-presentation {
     position: relative;
 
-    width: 100%;
-    min-height: 500px;
+    /* Vertical video */
+    width: min(100%, 380px);
+    aspect-ratio: 9 / 16;
 
+    margin: 40px auto;
     overflow: hidden;
 
-    border-radius: 28px;
+    border-radius: 24px;
+    background: #000;
 
-    background: #080808;
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-
-    cursor: pointer;
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    box-shadow: 0 20px 70px rgba(91, 33, 182, 0.15);
 }
-
-
-/* Video */
 
 .bruk-presentation__video {
     position: absolute;
-
     inset: 0;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
+    object-position: center;
 
-    opacity: 0.72;
-
-    transition:
-        transform 0.8s ease,
-        opacity 0.4s ease;
+    display: block;
 }
 
 

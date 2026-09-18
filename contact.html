@@ -1004,7 +1004,7 @@
 
                 <a href="index.html" class="bruk-brand">
                     <img src="assets/logo-mark.png" alt="BRUK Logo">
-                    <span>BRUK<span class="brand-dot">.</span></span>
+                    <span>BRUK<span class="brand-dot"></span></span>
                 </a>
 
                 <div class="bruk-nav-links" id="brukNavLinks">
@@ -1209,7 +1209,11 @@
                     </div>
 
 
-                    <form id="projectForm">
+                    <form
+    id="projectForm"
+    action="https://formspree.io/f/xzezzkra"
+    method="POST"
+>
 
                         <div class="form-grid">
 
@@ -1317,51 +1321,6 @@
                             </div>
 
 
-                            <!-- Budget -->
-
-                            <div class="form-group full">
-
-                                <label for="budget">
-                                    Estimated Budget
-                                </label>
-
-                                <select
-                                    id="budget"
-                                    name="budget"
-                                    required>
-
-                                    <option value="" selected disabled>
-                                        Select your budget range
-                                    </option>
-
-                                    <option value="Under ₹10,000">
-                                        Under ₹10,000
-                                    </option>
-
-                                    <option value="₹10,000 – ₹25,000">
-                                        ₹10,000 – ₹25,000
-                                    </option>
-
-                                    <option value="₹25,000 – ₹50,000">
-                                        ₹25,000 – ₹50,000
-                                    </option>
-
-                                    <option value="₹50,000 – ₹1,00,000">
-                                        ₹50,000 – ₹1,00,000
-                                    </option>
-
-                                    <option value="₹1,00,000+">
-                                        ₹1,00,000+
-                                    </option>
-
-                                    <option value="Not sure yet">
-                                        Not sure yet
-                                    </option>
-
-                                </select>
-
-                            </div>
-
 
                             <!-- Message -->
 
@@ -1385,9 +1344,8 @@
                         <div class="form-submit">
 
                             <p class="form-note">
-                                Clicking submit will open your email
-                                application with your project details
-                                already prepared.
+                                Your project details will be sent
+                                securely to the BRUK team.
                             </p>
 
                             <button
@@ -1396,7 +1354,7 @@
                                 id="submitBtn">
 
                                 <span>
-                                    SEND PROJECT →
+                                    SEND MESSAGE →
                                 </span>
 
                             </button>
@@ -1442,7 +1400,7 @@
                 <a href="index.html" class="footer-brand">
 
                     <img
-                        src="assets/logo-mark.png"
+                        src="assets/-mark.png"
                         alt="BRUK">
 
                     <span>BRUK</span>
@@ -1561,7 +1519,7 @@
 
 
         /* =========================
-           CONTACT FORM
+           CONTACT FORM — FORMSPREE
            ========================= */
 
         const projectForm =
@@ -1570,85 +1528,60 @@
         const submitBtn =
             document.getElementById("submitBtn");
 
+        if (projectForm && submitBtn) {
 
-        projectForm.addEventListener("submit", function (event) {
+            projectForm.addEventListener("submit", async function (event) {
 
-            event.preventDefault();
+                event.preventDefault();
 
+                const buttonText = submitBtn.querySelector("span");
 
-            const name =
-                document.getElementById("name").value.trim();
+                buttonText.textContent = "SENDING...";
+                submitBtn.disabled = true;
 
-            const email =
-                document.getElementById("email").value.trim();
+                try {
 
-            const phone =
-                document.getElementById("phone").value.trim();
+                    const response = await fetch(
+                        "https://formspree.io/f/xzezzkra",
+                        {
+                            method: "POST",
+                            body: new FormData(projectForm),
+                            headers: {
+                                "Accept": "application/json"
+                            }
+                        }
+                    );
 
-            const service =
-                document.getElementById("service").value;
+                    if (response.ok) {
 
-            const budget =
-                document.getElementById("budget").value;
+                        buttonText.textContent = "✓ MESSAGE SENT";
 
-            const message =
-                document.getElementById("message").value.trim();
+                        projectForm.reset();
 
+                        setTimeout(() => {
+                            buttonText.textContent = "SEND MESSAGE →";
+                            submitBtn.disabled = false;
+                        }, 3000);
 
-            const subject =
-                `BRUK Project Enquiry — ${service}`;
+                    } else {
 
+                        buttonText.textContent = "TRY AGAIN →";
+                        submitBtn.disabled = false;
 
-            const body =
-`Hello BRUK,
+                    }
 
-I would like to discuss a project.
+                } catch (error) {
 
---------------------------------
-CLIENT DETAILS
---------------------------------
+                    console.error("Formspree error:", error);
 
-Name: ${name}
-Email: ${email}
-Phone / WhatsApp: ${phone || "Not provided"}
+                    buttonText.textContent = "TRY AGAIN →";
+                    submitBtn.disabled = false;
 
---------------------------------
-PROJECT
---------------------------------
+                }
 
-Service: ${service}
-Budget: ${budget}
+            });
 
---------------------------------
-MESSAGE
---------------------------------
-
-${message}
-
---------------------------------
-
-Sent from the BRUK website.`;
-
-
-            const mailto =
-                `mailto:connectbruk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-
-            submitBtn.querySelector("span").textContent =
-                "OPENING EMAIL...";
-
-
-            window.location.href = mailto;
-
-
-            setTimeout(() => {
-
-                submitBtn.querySelector("span").textContent =
-                    "SEND PROJECT →";
-
-            }, 2500);
-
-        });
+        }
 
 
         /* =========================
@@ -1660,6 +1593,8 @@ Sent from the BRUK website.`;
 
 
         window.addEventListener("scroll", () => {
+
+            if (!navbar) return;
 
             if (window.scrollY > 30) {
 
