@@ -1025,4 +1025,236 @@
   .bruk-cta h2 {
     font-size: clamp(2.7rem, 12vw, 4rem);
   }
+}/* =========================================
+   BRUK PRESENTATION VIDEO
+   ========================================= */
+
+.bruk-presentation {
+    position: relative;
+
+    width: 100%;
+    min-height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #080808;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    cursor: pointer;
 }
+
+
+/* Video */
+
+.bruk-presentation__video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.72;
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.4s ease;
+}
+
+
+/* Zoom on hover */
+
+.bruk-presentation:hover
+.bruk-presentation__video {
+    transform: scale(1.04);
+}
+
+
+/* Overlay */
+
+.bruk-presentation__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 58, 237, 0.18),
+            rgba(0, 0, 0, 0.72)
+        );
+
+    pointer-events: none;
+}
+
+
+/* Existing decorative shapes */
+
+.bruk-presentation__shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.bruk-presentation__shape--a {
+    width: 220px;
+    height: 220px;
+
+    top: -100px;
+    left: -80px;
+
+    background: rgba(139, 92, 246, 0.18);
+
+    filter: blur(60px);
+}
+
+.bruk-presentation__shape--b {
+    width: 280px;
+    height: 280px;
+
+    right: -100px;
+    bottom: -130px;
+
+    background: rgba(109, 40, 217, 0.18);
+
+    filter: blur(70px);
+}
+
+
+/* Play button */
+
+.bruk-play {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(15px);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.bruk-play span {
+    font-size: 23px;
+
+    margin-left: 4px;
+}
+
+
+.bruk-play:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+
+    background: rgba(139, 92, 246, 0.25);
+
+    box-shadow:
+        0 0 50px rgba(139, 92, 246, 0.35);
+}
+
+
+/* Label */
+
+.bruk-presentation__label {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 35px;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.2em;
+
+    white-space: nowrap;
+}
+
+
+/* When video is playing */
+
+.bruk-presentation.is-playing
+.bruk-play {
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.bruk-presentation.is-playing
+.bruk-presentation__video {
+    opacity: 1;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .bruk-presentation {
+        min-height: 350px;
+
+        border-radius: 20px;
+    }
+
+    .bruk-play {
+        width: 72px;
+        height: 72px;
+    }
+
+    .bruk-play span {
+        font-size: 18px;
+    }
+
+    .bruk-presentation__label {
+        bottom: 22px;
+
+        font-size: 8px;
+    }
+}
+
+
+

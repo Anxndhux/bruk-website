@@ -603,3 +603,76 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+/* =========================================
+   BRUK PRESENTATION VIDEO
+   ========================================= */
+
+const presentation =
+    document.querySelector(".bruk-presentation");
+
+const presentationVideo =
+    document.getElementById("brukPresentationVideo");
+
+const presentationPlay =
+    document.getElementById("brukPlayButton");
+
+
+if (
+    presentation &&
+    presentationVideo &&
+    presentationPlay
+) {
+
+    presentationPlay.addEventListener("click", async () => {
+
+        try {
+
+            await presentationVideo.play();
+
+            presentation.classList.add("is-playing");
+
+        } catch (error) {
+
+            console.error(
+                "Unable to play presentation:",
+                error
+            );
+
+        }
+
+    });
+
+
+    /* Click video to pause/play */
+
+    presentationVideo.addEventListener("click", () => {
+
+        if (presentationVideo.paused) {
+
+            presentationVideo.play();
+
+            presentation.classList.add("is-playing");
+
+        } else {
+
+            presentationVideo.pause();
+
+            presentation.classList.remove("is-playing");
+
+        }
+
+    });
+
+
+    /* Show play button again when video ends */
+
+    presentationVideo.addEventListener("ended", () => {
+
+        presentation.classList.remove("is-playing");
+
+        presentationVideo.currentTime = 0;
+
+    });
+
+}

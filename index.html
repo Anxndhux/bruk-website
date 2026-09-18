@@ -74,15 +74,34 @@
         </div>
 
         <div class="bruk-presentation reveal-bruk">
-          <div class="bruk-presentation__shape bruk-presentation__shape--a"></div>
-          <div class="bruk-presentation__shape bruk-presentation__shape--b"></div>
-          <div class="bruk-presentation__grid"></div>
-          <button class="bruk-play" type="button" aria-label="Play BRUK presentation">
-            <span>▶</span>
-          </button>
-          <p>CLICK TO WATCH PRESENTATION</p>
-        </div>
-      </div>
+
+    <video
+        class="bruk-presentation__video"
+        id="brukPresentationVideo"
+        preload="metadata"
+        playsinline>
+
+        <source src="assets/bruk-presentation.mp4" type="video/mp4">
+
+        Your browser does not support video playback.
+    </video>
+
+    <!-- Dark overlay -->
+    <div class="bruk-presentation__overlay"></div>
+
+    <!-- Play button -->
+    <button
+        class="bruk-play"
+        id="brukPlayButton"
+        type="button"
+        aria-label="Play BRUK presentation">
+
+        <span>▶</span>
+
+    </button>
+
+   
+</div>
     </section>
 
     <!-- SERVICES -->
@@ -274,10 +293,7 @@
       }, { threshold: 0.12 });
       revealItems.forEach(el => revealObserver.observe(el));
 
-      const play = document.querySelector('.bruk-play');
-      if (play) play.addEventListener('click', () => {
-        alert('Add your BRUK presentation video here.');
-      });
+
     });
   </script>
 </body>
