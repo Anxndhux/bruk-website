@@ -1,0 +1,1028 @@
+/* =========================================================
+   BRUK — PREMIUM ONREVV-INSPIRED HOMEPAGE
+   Add this AFTER your existing style.css
+   ========================================================= */
+
+.bruk-hero {
+  min-height: 100vh !important;
+  padding: 150px 24px 80px !important;
+  background: #000 !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.bruk-hero__inner {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bruk-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a78bfa;
+  margin-bottom: 22px;
+}
+
+.bruk-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 8.8rem);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  margin: 0 auto 30px;
+  max-width: 1100px;
+}
+
+.bruk-hero__title span,
+.bruk-section-head h2 span,
+.bruk-cta h2 span {
+  background: linear-gradient(
+    110deg,
+    #ffffff 5%,
+    #9b6cff 48%,
+    #6d68ff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bruk-hero__desc {
+  max-width: 650px;
+  margin: 0 auto 38px;
+  color: #9999a3;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.bruk-hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bruk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 9px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: 0.3s var(--ease-spring);
+}
+
+.bruk-btn b {
+  font-size: 16px;
+}
+
+.bruk-btn--light {
+  background: #fff;
+  color: #080808;
+  box-shadow: 0 10px 35px rgba(255,255,255,0.06);
+}
+
+.bruk-btn--light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 45px rgba(255,255,255,0.13);
+}
+
+.bruk-btn--outline {
+  border: 1px solid #333;
+  background: #050505;
+  color: #aaa;
+}
+
+.bruk-btn--outline:hover {
+  border-color: #777;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.bruk-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #666;
+}
+
+.bruk-scroll span {
+  color: #fff;
+  margin-left: 12px;
+}
+
+.bruk-hero__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.bruk-hero__glow--one {
+  width: 480px;
+  height: 480px;
+  background: #6225e8;
+  opacity: 0.15;
+  top: 12%;
+  left: 12%;
+}
+
+.bruk-hero__glow--two {
+  width: 420px;
+  height: 420px;
+  background: #9458ff;
+  opacity: 0.12;
+  right: 8%;
+  bottom: 5%;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+   ========================================================= */
+
+.bruk-section {
+  padding: 135px 0 !important;
+  border-top: 1px solid #151515;
+}
+
+.bruk-section-head {
+  max-width: 850px;
+  margin-bottom: 62px;
+}
+
+.bruk-section-head--center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bruk-section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin-bottom: 24px;
+}
+
+.bruk-section-head > p:last-child {
+  max-width: 650px;
+  color: #91919b;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.bruk-section-head--center > p:last-child {
+  margin: auto;
+}
+
+
+/* =========================================================
+   WHAT IS BRUK / PRESENTATION
+   ========================================================= */
+
+.bruk-presentation {
+  height: 560px;
+  max-width: 1080px;
+  margin: auto;
+
+  border: 1px solid #543b78;
+  border-radius: 20px;
+
+  overflow: hidden;
+  position: relative;
+
+  background:
+    linear-gradient(
+      125deg,
+      #5d3020 0%,
+      #46136d 48%,
+      #16052c 100%
+    );
+
+  display: grid;
+  place-items: center;
+
+  box-shadow:
+    0 30px 100px rgba(81,20,165,0.15);
+}
+
+.bruk-presentation__grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(#ffffff09 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff09 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #000 30%,
+      #000 70%,
+      transparent
+    );
+}
+
+.bruk-presentation__shape {
+  position: absolute;
+  filter: blur(1px);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+.bruk-presentation__shape--a {
+  width: 780px;
+  height: 330px;
+  left: -350px;
+  bottom: -160px;
+
+  background: #086d7b;
+
+  transform: rotate(12deg);
+}
+
+.bruk-presentation__shape--b {
+  width: 850px;
+  height: 300px;
+  left: -260px;
+  top: 10px;
+
+  background: #9b531f;
+  opacity: 0.55;
+
+  transform: rotate(17deg);
+}
+
+.bruk-play {
+  width: 105px;
+  height: 105px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #8b4dff;
+  color: #fff;
+
+  font-size: 27px;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+
+  z-index: 3;
+
+  box-shadow:
+    0 0 0 20px #ffffff08,
+    0 0 0 42px #ffffff05,
+    0 0 60px #8b4dff99;
+
+  transition: 0.35s var(--ease-spring);
+}
+
+.bruk-play:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 0 25px #ffffff0a,
+    0 0 70px #8b4dffcc;
+}
+
+.bruk-presentation > p {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 105px;
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+
+  color: #eee;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.bruk-service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.bruk-service {
+  min-height: 310px;
+
+  padding: 30px;
+
+  border: 1px solid #202024;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0d0d10,
+      #070708
+    );
+
+  position: relative;
+  overflow: hidden;
+
+  transition: 0.4s var(--ease-spring);
+}
+
+.bruk-service:hover {
+  transform: translateY(-8px);
+
+  border-color: #493578;
+
+  box-shadow:
+    0 20px 50px #000,
+    0 0 35px #6f35b51f;
+}
+
+.bruk-service > span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #666;
+}
+
+.bruk-service__icon {
+  width: 48px;
+  height: 48px;
+
+  margin: 28px 0 22px;
+
+  border: 1px solid #513b78;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  color: #a78bfa;
+  background: #8b5cf611;
+
+  font-size: 20px;
+}
+
+.bruk-service h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.bruk-service p {
+  color: #777782;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.bruk-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+
+  position: absolute;
+  bottom: 25px;
+}
+
+.bruk-tags i {
+  font: 9px var(--font-mono);
+  font-style: normal;
+
+  color: #777;
+
+  padding: 5px 8px;
+
+  border: 1px solid #25252a;
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   PROJECT SHOWCASE
+   ========================================================= */
+
+.bruk-projects {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 22px;
+}
+
+.bruk-project {
+  min-width: 0;
+}
+
+.bruk-project--wide {
+  grid-column: 1 / -1;
+}
+
+.bruk-project__visual {
+  height: 390px;
+
+  border-radius: 19px;
+  border: 1px solid #242429;
+
+  overflow: hidden;
+
+  position: relative;
+
+  transition: 0.45s var(--ease-spring);
+}
+
+.bruk-project--big .bruk-project__visual {
+  height: 470px;
+}
+
+.bruk-project--wide .bruk-project__visual {
+  height: 400px;
+}
+
+.bruk-project:hover .bruk-project__visual {
+  transform: scale(0.985);
+  border-color: #634694;
+}
+
+
+/* E-COMMERCE */
+
+.bruk-project__visual--commerce {
+  background:
+    linear-gradient(
+      135deg,
+      #182a39,
+      #397a96 48%,
+      #bf443f
+    );
+
+  padding: 25px;
+}
+
+.mini-nav {
+  font: 9px var(--font-mono);
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #fff;
+}
+
+.mini-nav span {
+  color: #ddd;
+}
+
+.commerce-title {
+  position: absolute;
+
+  left: 50%;
+  top: 48%;
+
+  transform: translate(-50%, -50%);
+
+  width: 68%;
+
+  background: #090909e8;
+
+  padding: 27px;
+
+  color: #fff;
+
+  font-size: 35px;
+  line-height: 0.88;
+}
+
+.commerce-title strong {
+  font-size: 1.25em;
+}
+
+.commerce-pills {
+  position: absolute;
+
+  bottom: 26px;
+  left: 26px;
+
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.commerce-pills i {
+  font: 8px var(--font-mono);
+  font-style: normal;
+
+  background: #867d45;
+
+  padding: 6px 8px;
+
+  color: #fff;
+}
+
+
+/* FASHION */
+
+.bruk-project__visual--fashion {
+  background:
+    linear-gradient(
+      90deg,
+      #54a884 0 42%,
+      #18181a 42%
+    );
+}
+
+.bruk-project__visual--fashion::before {
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 100%;
+
+  left: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      #8be0b7,
+      transparent 45%
+    );
+}
+
+.fashion-label {
+  position: absolute;
+
+  right: 8%;
+  top: 29%;
+
+  font-size: 39px;
+  line-height: 0.86;
+}
+
+.fashion-label strong {
+  font-size: 1.25em;
+}
+
+.fashion-label small {
+  display: block;
+
+  font: 9px var(--font-mono);
+
+  color: #999;
+
+  margin-top: 20px;
+}
+
+
+/* BUSINESS */
+
+.bruk-project__visual--business {
+  background:
+    linear-gradient(
+      135deg,
+      #ded6bf,
+      #719296
+    );
+
+  color: #111;
+}
+
+.business-label {
+  padding: 40px;
+
+  font-size: 43px;
+  line-height: 0.86;
+}
+
+.business-label strong {
+  font-size: 1.2em;
+}
+
+.business-chart {
+  position: absolute;
+
+  bottom: 25px;
+  right: 8%;
+
+  width: 55%;
+  height: 130px;
+
+  display: flex;
+  align-items: end;
+
+  gap: 10px;
+}
+
+.business-chart i {
+  flex: 1;
+
+  background: #181818;
+
+  border-radius: 5px 5px 0 0;
+
+  height: 30%;
+}
+
+.business-chart i:nth-child(2) {
+  height: 55%;
+}
+
+.business-chart i:nth-child(3) {
+  height: 40%;
+}
+
+.business-chart i:nth-child(4) {
+  height: 82%;
+}
+
+.business-chart i:nth-child(5) {
+  height: 100%;
+}
+
+
+/* PORTFOLIO */
+
+.bruk-project__visual--portfolio {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #7542a0,
+      #17121b 60%
+    );
+
+  display: grid;
+  place-items: center;
+
+  text-align: center;
+
+  font-size: 62px;
+
+  line-height: 0.82;
+}
+
+.bruk-project__visual--portfolio strong {
+  font-size: 1.25em;
+}
+
+
+/* PROJECT INFO */
+
+.bruk-project__info {
+  padding: 17px 4px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.bruk-project__info small {
+  grid-column: 1 / -1;
+
+  font: 10px var(--font-mono);
+
+  letter-spacing: 0.13em;
+
+  color: #686870;
+
+  margin-bottom: 7px;
+}
+
+.bruk-project__info h3 {
+  font-size: 1.15rem;
+}
+
+.bruk-project__info b {
+  font-size: 20px;
+  color: #aaa;
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.bruk-process {
+  background: #060606;
+}
+
+.bruk-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.bruk-step {
+  padding: 30px;
+
+  border: 1px solid #222;
+  border-radius: 17px;
+
+  background: #0a0a0c;
+
+  transition: 0.35s;
+}
+
+.bruk-step:hover {
+  transform: translateY(-6px);
+  border-color: #513879;
+}
+
+.bruk-step strong {
+  font: 1.5rem var(--font-mono);
+  color: #8b5cf6;
+}
+
+.bruk-step h3 {
+  margin: 28px 0 8px;
+}
+
+.bruk-step p {
+  color: #777;
+
+  font-size: 0.85rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.bruk-tech-cloud {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  max-width: 850px;
+
+  margin: auto;
+}
+
+.bruk-tech-cloud span {
+  padding: 13px 19px;
+
+  border: 1px solid #27272b;
+
+  background: #0b0b0e;
+
+  border-radius: 999px;
+
+  font: 12px var(--font-mono);
+
+  color: #c6c6cc;
+
+  transition: 0.3s;
+}
+
+.bruk-tech-cloud span:hover {
+  transform: translateY(-5px);
+
+  border-color: #7650a8;
+
+  color: #fff;
+
+  box-shadow:
+    0 0 25px #7142a52b;
+}
+
+
+/* =========================================================
+   PURPLE CTA
+   ========================================================= */
+
+.bruk-cta {
+  margin: 0 max(24px, 7vw) 110px;
+
+  border: 1px solid #8056e9;
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      125deg,
+      #4c14c9,
+      #6c2fe8 50%,
+      #4b29b9
+    );
+
+  text-align: center;
+
+  padding: 125px 24px;
+}
+
+.bruk-cta::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      #c178ff2e,
+      transparent 52%
+    );
+}
+
+.bruk-cta__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.bruk-cta h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+}
+
+.bruk-cta__inner > p:not(.bruk-kicker) {
+  max-width: 720px;
+
+  margin: 25px auto 40px;
+
+  color: #ddd;
+
+  line-height: 1.8;
+}
+
+.bruk-cta__orb {
+  position: absolute;
+
+  width: 300px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: #c29aff2b;
+}
+
+.bruk-cta__orb--left {
+  left: -200px;
+  top: -70px;
+}
+
+.bruk-cta__orb--right {
+  right: -200px;
+  bottom: -70px;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.reveal-bruk {
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s var(--ease-spring);
+}
+
+.reveal-bruk.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar__nav {
+    gap: 15px;
+  }
+
+  .navbar__link {
+    font-size: 0.65rem;
+  }
+
+  .bruk-service-grid,
+  .bruk-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bruk-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .bruk-project--wide {
+    grid-column: auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__nav.is-open {
+    display: flex;
+
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: #050505;
+
+    padding: 25px;
+
+    flex-direction: column;
+
+    border-bottom: 1px solid #222;
+  }
+
+  .bruk-hero {
+    padding-top: 125px !important;
+  }
+
+  .bruk-hero__title {
+    font-size: clamp(3.4rem, 15vw, 5rem);
+  }
+
+  .bruk-hero__desc {
+    font-size: 0.9rem;
+  }
+
+  .bruk-section {
+    padding: 95px 0 !important;
+  }
+
+  .bruk-service-grid,
+  .bruk-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bruk-presentation {
+    height: 350px;
+  }
+
+  .bruk-project--big .bruk-project__visual,
+  .bruk-project__visual,
+  .bruk-project--wide .bruk-project__visual {
+    height: 320px;
+  }
+
+  .commerce-title {
+    font-size: 27px;
+  }
+
+  .bruk-project__visual--portfolio {
+    font-size: 44px;
+  }
+
+  .bruk-cta {
+    margin-left: 18px;
+    margin-right: 18px;
+
+    padding: 90px 20px;
+  }
+
+  .bruk-cta h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+  }
+}

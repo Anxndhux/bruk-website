@@ -5,7 +5,11 @@ const path = require('path');
 const server = http.createServer((req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   let filePath = '.' + parsedUrl.pathname;
-  if (filePath === './' || filePath === '.') filePath = './index.html';
+  if (filePath === './' || filePath === '.') {
+    filePath = './index.html';
+  } else if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath = filePath + '.html';
+  }
 
   const extname = String(path.extname(filePath)).toLowerCase();
   const mimeTypes = {

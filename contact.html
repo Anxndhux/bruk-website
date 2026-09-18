@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact — BRUK | Build Bold, Grow Beyond</title>
+
+    <meta name="description"
+        content="Start your next digital project with BRUK. Let's build bold, modern and high-performing websites.">
+
+    <link rel="icon" href="assets/logo-mark.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           BRUK CONTACT PAGE
+           ========================================================= */
+
+        :root {
+            --bg: #050505;
+            --bg-soft: #090909;
+            --card: #0b0b0d;
+            --card-hover: #101014;
+
+            --text: #ffffff;
+            --muted: #a1a1aa;
+            --muted-2: #71717a;
+
+            --purple: #8b5cf6;
+            --purple-light: #a78bfa;
+            --purple-dark: #6d28d9;
+
+            --border: rgba(255, 255, 255, 0.09);
+            --border-hover: rgba(139, 92, 246, 0.45);
+
+            --radius: 22px;
+            --container: 1240px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* =========================================================
+           BACKGROUND
+           ========================================================= */
+
+        .contact-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 50% -15%,
+                    rgba(124, 58, 237, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 45%,
+                    rgba(139, 92, 246, 0.07),
+                    transparent 30%
+                ),
+                #050505;
+        }
+
+        .contact-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 75%
+            );
+        }
+
+        .ambient-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(124, 58, 237, 0.12);
+            filter: blur(130px);
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* =========================================================
+           BRUK NAVBAR — MATCHES HOMEPAGE
+           ========================================================= */
+
+        .bruk-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 82px;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.20);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.025);
+            transition: background 0.3s ease;
+        }
+
+        .bruk-navbar-inner {
+            width: 100%;
+            max-width: 1320px;
+            height: 82px;
+            margin: 0 auto;
+            padding: 0 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .bruk-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 190px;
+            color: #ffffff;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            text-decoration: none;
+        }
+
+        .bruk-brand img {
+            width: 37px;
+            height: 37px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .bruk-brand span {
+            line-height: 1;
+        }
+
+        .brand-dot {
+            color: #8b5cf6;
+        }
+
+        .bruk-nav-links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 38px;
+            height: 100%;
+        }
+
+        .bruk-nav-links a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.62);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.20em;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.25s ease;
+        }
+
+        .bruk-nav-links a:hover,
+        .bruk-nav-links a.active {
+            color: #ffffff;
+        }
+
+        .bruk-nav-links a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 18px;
+            height: 2px;
+            background: #8b5cf6;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.65);
+        }
+
+        .bruk-nav-cta {
+            min-width: 142px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #050505;
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .bruk-nav-cta:hover {
+            transform: translateY(-2px);
+            background: #f4f1ff;
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.25);
+        }
+
+        .bruk-mobile-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1050px) {
+            .bruk-navbar-inner {
+                padding: 0 25px;
+            }
+
+            .bruk-nav-links {
+                gap: 25px;
+            }
+
+            .bruk-brand {
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .bruk-navbar,
+            .bruk-navbar-inner {
+                height: 72px;
+            }
+
+            .bruk-navbar-inner {
+                padding: 0 20px;
+            }
+
+            .bruk-brand {
+                font-size: 21px;
+            }
+
+            .bruk-brand img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .bruk-nav-links {
+                position: absolute;
+                top: 72px;
+                left: 15px;
+                right: 15px;
+                transform: none;
+                width: auto;
+                height: auto;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 16px;
+                background: rgba(7, 7, 8, 0.96);
+                backdrop-filter: blur(25px);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            }
+
+            .bruk-nav-links.open {
+                display: flex;
+            }
+
+            .bruk-nav-links a {
+                height: auto;
+                padding: 15px 14px;
+                font-size: 11px;
+            }
+
+            .bruk-nav-links a.active::after {
+                left: 14px;
+                right: auto;
+                bottom: 8px;
+                width: 25px;
+            }
+
+            .bruk-nav-cta {
+                display: none;
+            }
+
+            .bruk-mobile-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* =========================================================
+           HERO
+           ========================================================= */
+
+        .contact-hero {
+            max-width: 1100px;
+            margin: auto;
+
+            padding: 185px 30px 100px;
+
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 30px;
+
+            font-family: "JetBrains Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+
+            color: #aaa;
+        }
+
+        .hero-eyebrow span {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+            background: var(--purple-light);
+
+            box-shadow:
+                0 0 15px rgba(167, 139, 250, 0.8);
+        }
+
+        .contact-hero h1 {
+            max-width: 1000px;
+            margin: auto;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+
+            font-size: clamp(55px, 8vw, 108px);
+            line-height: 0.98;
+
+            letter-spacing: -0.065em;
+            font-weight: 800;
+        }
+
+        .contact-hero h1 .gradient {
+            background: linear-gradient(
+                120deg,
+                #ffffff 20%,
+                #b8a4ff 55%,
+                #7041e8 100%
+            );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-hero p {
+            max-width: 620px;
+            margin: 32px auto 0;
+
+            color: #9b9ba2;
+
+            font-size: 17px;
+            line-height: 1.75;
+        }
+
+        /* =========================================================
+           CONTACT AREA
+           ========================================================= */
+
+        .contact-main {
+            max-width: var(--container);
+            margin: auto;
+            padding: 0 30px 130px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 22px;
+
+            align-items: stretch;
+        }
+
+        /* =========================================================
+           INFO CARD
+           ========================================================= */
+
+        .contact-info {
+            position: relative;
+
+            min-height: 620px;
+
+            padding: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                radial-gradient(
+                    circle at 10% 0%,
+                    rgba(124, 58, 237, 0.13),
+                    transparent 38%
+                ),
+                rgba(255, 255, 255, 0.025);
+
+            overflow: hidden;
+        }
+
+        .contact-info::after {
+            content: "";
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            right: -100px;
+            bottom: -120px;
+
+            border-radius: 50%;
+
+            background: rgba(139, 92, 246, 0.1);
+            filter: blur(70px);
+
+            pointer-events: none;
+        }
+
+        .section-label {
+            font-family: "JetBrains Mono", monospace;
+            color: var(--purple-light);
+
+            font-size: 11px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+        }
+
+        .contact-info h2 {
+            margin-top: 22px;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 38px;
+            line-height: 1.08;
+            letter-spacing: -0.04em;
+        }
+
+        .contact-info > p {
+            margin-top: 20px;
+
+            max-width: 400px;
+
+            color: #8e8e96;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+
+            margin-top: 58px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+        }
+
+        .info-icon {
+            flex-shrink: 0;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background: rgba(255, 255, 255, 0.035);
+
+            font-size: 17px;
+
+            transition: 0.3s ease;
+        }
+
+        .info-item:hover .info-icon {
+            border-color: var(--border-hover);
+            background: rgba(139, 92, 246, 0.1);
+
+            transform: translateY(-2px);
+        }
+
+        .info-content small {
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #66666d;
+
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .info-content a,
+        .info-content span {
+            color: #dddde1;
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            transition: 0.25s ease;
+        }
+
+        .info-content a:hover {
+            color: var(--purple-light);
+        }
+
+        /* =========================================================
+           FORM CARD
+           ========================================================= */
+
+        .contact-form-card {
+            padding: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.035),
+                    rgba(255, 255, 255, 0.012)
+                );
+        }
+
+        .form-heading {
+            margin-bottom: 34px;
+        }
+
+        .form-heading h2 {
+            margin-top: 14px;
+
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 32px;
+            letter-spacing: -0.04em;
+        }
+
+        .form-heading p {
+            margin-top: 10px;
+
+            color: #77777f;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #9b9ba1;
+
+            font-family: "JetBrains Mono", monospace;
+            font-size: 10px;
+
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+
+            outline: none;
+
+            padding: 15px 16px;
+
+            background: rgba(0, 0, 0, 0.32);
+            color: white;
+
+            font-size: 14px;
+
+            transition: 0.25s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #4f4f55;
+        }
+
+        .form-group select {
+            appearance: none;
+
+            background-image:
+                linear-gradient(45deg, transparent 50%, #777 50%),
+                linear-gradient(135deg, #777 50%, transparent 50%);
+
+            background-position:
+                calc(100% - 19px) 21px,
+                calc(100% - 14px) 21px;
+
+            background-size: 5px 5px, 5px 5px;
+            background-repeat: no-repeat;
+        }
+
+        .form-group select option {
+            background: #0b0b0d;
+            color: white;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(139, 92, 246, 0.65);
+
+            background: rgba(139, 92, 246, 0.035);
+
+            box-shadow:
+                0 0 0 3px rgba(139, 92, 246, 0.07),
+                0 0 30px rgba(139, 92, 246, 0.05);
+        }
+
+        /* =========================================================
+           SUBMIT
+           ========================================================= */
+
+        .form-submit {
+            margin-top: 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .form-note {
+            max-width: 300px;
+
+            color: #5f5f66;
+
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .submit-btn {
+            position: relative;
+
+            min-width: 190px;
+
+            padding: 16px 25px;
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+
+            background: white;
+            color: #050505;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #c4b5fd
+            );
+
+            transform: translateX(-100%);
+
+            transition: 0.35s ease;
+        }
+
+        .submit-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 35px rgba(139, 92, 246, 0.22);
+        }
+
+        .submit-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        /* =========================================================
+           LOWER CTA
+           ========================================================= */
+
+        .contact-bottom {
+            max-width: 1000px;
+
+            margin: 20px auto 0;
+            padding: 95px 30px 130px;
+
+            text-align: center;
+        }
+
+        .contact-bottom h2 {
+            font-family: "Plus Jakarta Sans", sans-serif;
+
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1;
+
+            letter-spacing: -0.055em;
+        }
+
+        .contact-bottom h2 span {
+            color: #77777e;
+        }
+
+        .contact-bottom p {
+            max-width: 550px;
+
+            margin: 22px auto 0;
+
+            color: #7e7e85;
+
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================================================
+           FOOTER
+           ========================================================= */
+
+        .contact-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+            padding: 34px 30px;
+        }
+
+        .footer-inner {
+            max-width: var(--container);
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .footer-brand img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .footer-copy {
+            color: #55555b;
+            font-size: 11px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links a {
+            color: #77777e;
+            font-size: 11px;
+
+            transition: 0.25s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* =========================================================
+           REVEAL ANIMATION
+           ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .contact-hero {
+                padding-top: 145px;
+                padding-bottom: 75px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .contact-hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .contact-hero h1 {
+                font-size: 55px;
+            }
+
+            .contact-hero p {
+                font-size: 14px;
+            }
+
+            .contact-main {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .contact-info,
+            .contact-form-card {
+                padding: 27px 22px;
+            }
+
+            .contact-info h2 {
+                font-size: 30px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .form-submit {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-note {
+                max-width: none;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+
+            .contact-bottom {
+                padding: 80px 20px 90px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contact-page">
+
+        <div class="ambient-glow"></div>
+
+        <!-- =====================================================
+             NAVBAR
+             ===================================================== -->
+
+        <nav class="bruk-navbar">
+
+            <div class="bruk-navbar-inner">
+
+                <a href="index.html" class="bruk-brand">
+                    <img src="assets/logo-mark.png" alt="BRUK Logo">
+                    <span>BRUK<span class="brand-dot">.</span></span>
+                </a>
+
+                <div class="bruk-nav-links" id="brukNavLinks">
+
+                    <a href="index.html">HOME</a>
+
+                    <a href="index.html#about">ABOUT US</a>
+
+                    <a href="index.html#products">PRODUCTS</a>
+
+                    <a href="index.html#services">SERVICES</a>
+
+                    <a href="contact.html" class="active">CONTACT</a>
+
+                </div>
+
+                
+
+                <button
+                    class="bruk-mobile-toggle"
+                    id="brukMobileToggle"
+                    aria-label="Open menu">
+                    ☰
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
+        <header class="contact-hero reveal">
+
+            <div class="hero-eyebrow">
+                <span></span>
+                Let's build something
+            </div>
+
+            <h1>
+                Let's turn your
+                <span class="gradient">idea into reality.</span>
+            </h1>
+
+            <p>
+                Tell us what you're building, what you're dreaming about,
+                or what needs to change. We'll turn it into a digital
+                experience that actually works.
+            </p>
+
+        </header>
+
+
+        <!-- =====================================================
+             CONTACT SECTION
+             ===================================================== -->
+
+        <main class="contact-main">
+
+            <div class="contact-grid">
+
+
+                <!-- =========================
+                     CONTACT INFO
+                     ========================= -->
+
+                <section class="contact-info reveal">
+
+                    <div class="section-label">
+                        / GET IN TOUCH
+                    </div>
+
+                    <h2>
+                        Start a conversation.
+                    </h2>
+
+                    <p>
+                        Have a project in mind? Whether it's a new website,
+                        e-commerce platform, web application, or redesign,
+                        we'd love to hear about it.
+                    </p>
+
+
+                    <div class="info-list">
+
+                        <!-- Email -->
+
+                        <div class="info-item">
+
+                            <div class="info-icon">
+                                ✉
+                            </div>
+
+                            <div class="info-content">
+
+                                <small>Email</small>
+
+                                <a href="mailto:connectbruk@gmail.com">
+                                    connectbruk@gmail.com
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Instagram -->
+
+                        <div class="info-item">
+
+                            <div class="info-icon">
+                                ◎
+                            </div>
+
+                            <div class="info-content">
+
+                                <small>Instagram</small>
+
+                                <a
+                                    href="https://instagram.com/bruk.creates"
+                                    target="_blank"
+                                    rel="noopener">
+                                    @bruk.creates
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Location -->
+
+                        <div class="info-item">
+
+                            <div class="info-icon">
+                                ◇
+                            </div>
+
+                            <div class="info-content">
+
+                                <small>Based in</small>
+
+                                <span>
+                                    Kerala, India
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- WhatsApp -->
+
+                        <div class="info-item">
+
+                            <div class="info-icon">
+                                ↗
+                            </div>
+
+                            <div class="info-content">
+
+                                <small>WhatsApp</small>
+
+                                <a
+                                    href="https://wa.me/919633503665"
+                                    target="_blank"
+                                    rel="noopener">
+                                    Chat with us
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     FORM
+                     ========================= -->
+
+                <section class="contact-form-card reveal">
+
+                    <div class="form-heading">
+
+                        <div class="section-label">
+                            / PROJECT DETAILS
+                        </div>
+
+                        <h2>
+                            Tell us about your project.
+                        </h2>
+
+                        <p>
+                            Fill in a few details and we'll get back to you.
+                        </p>
+
+                    </div>
+
+
+                    <form id="projectForm">
+
+                        <div class="form-grid">
+
+
+                            <!-- Name -->
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="John Doe"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Email -->
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Phone -->
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone / WhatsApp
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+91 XXXXX XXXXX">
+
+                            </div>
+
+
+                            <!-- Service -->
+
+                            <div class="form-group">
+
+                                <label for="service">
+                                    What do you need?
+                                </label>
+
+                                <select
+                                    id="service"
+                                    name="service"
+                                    required>
+
+                                    <option value="" selected disabled>
+                                        Select a service
+                                    </option>
+
+                                    <option value="Business Website">
+                                        Business Website
+                                    </option>
+
+                                    <option value="E-commerce Store">
+                                        E-commerce Store
+                                    </option>
+
+                                    <option value="Landing Page">
+                                        Landing Page
+                                    </option>
+
+                                    <option value="Web Application">
+                                        Web Application
+                                    </option>
+
+                                    <option value="Portfolio Website">
+                                        Portfolio Website
+                                    </option>
+
+                                    <option value="Website Redesign">
+                                        Website Redesign
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Budget -->
+
+                            <div class="form-group full">
+
+                                <label for="budget">
+                                    Estimated Budget
+                                </label>
+
+                                <select
+                                    id="budget"
+                                    name="budget"
+                                    required>
+
+                                    <option value="" selected disabled>
+                                        Select your budget range
+                                    </option>
+
+                                    <option value="Under ₹10,000">
+                                        Under ₹10,000
+                                    </option>
+
+                                    <option value="₹10,000 – ₹25,000">
+                                        ₹10,000 – ₹25,000
+                                    </option>
+
+                                    <option value="₹25,000 – ₹50,000">
+                                        ₹25,000 – ₹50,000
+                                    </option>
+
+                                    <option value="₹50,000 – ₹1,00,000">
+                                        ₹50,000 – ₹1,00,000
+                                    </option>
+
+                                    <option value="₹1,00,000+">
+                                        ₹1,00,000+
+                                    </option>
+
+                                    <option value="Not sure yet">
+                                        Not sure yet
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Message -->
+
+                            <div class="form-group full">
+
+                                <label for="message">
+                                    Project Details
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell us about your idea, business, goals, features you need, timeline, etc."
+                                    required></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-submit">
+
+                            <p class="form-note">
+                                Clicking submit will open your email
+                                application with your project details
+                                already prepared.
+                            </p>
+
+                            <button
+                                type="submit"
+                                class="submit-btn"
+                                id="submitBtn">
+
+                                <span>
+                                    SEND PROJECT →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </main>
+
+
+        <!-- =====================================================
+             BOTTOM CTA
+             ===================================================== -->
+
+        <section class="contact-bottom reveal">
+
+            <h2>
+                Your next big idea
+                <span>starts here.</span>
+            </h2>
+
+            <p>
+                BRUK builds modern digital experiences designed to help
+                ambitious businesses look better, move faster and grow.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+
+        <footer class="contact-footer">
+
+            <div class="footer-inner">
+
+                <a href="index.html" class="footer-brand">
+
+                    <img
+                        src="assets/logo-mark.png"
+                        alt="BRUK">
+
+                    <span>BRUK</span>
+
+                </a>
+
+
+                <div class="footer-copy">
+                    © 2026 BRUK. Build Bold, Grow Beyond.
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="index.html#services">
+                        Services
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+           ========================= */
+
+        const brukMobileToggle =
+            document.getElementById("brukMobileToggle");
+
+        const brukNavLinks =
+            document.getElementById("brukNavLinks");
+
+
+        brukMobileToggle.addEventListener("click", () => {
+
+            brukNavLinks.classList.toggle("open");
+
+            brukMobileToggle.textContent =
+                brukNavLinks.classList.contains("open")
+                    ? "×"
+                    : "☰";
+
+        });
+
+
+        document
+            .querySelectorAll(".bruk-nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    brukNavLinks.classList.remove("open");
+
+                    brukMobileToggle.textContent = "☰";
+
+                });
+
+            });
+
+
+        /* =========================
+           SCROLL REVEAL
+           ========================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            revealObserver.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(element);
+
+        });
+
+
+        /* =========================
+           CONTACT FORM
+           ========================= */
+
+        const projectForm =
+            document.getElementById("projectForm");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+
+        projectForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const service =
+                document.getElementById("service").value;
+
+            const budget =
+                document.getElementById("budget").value;
+
+            const message =
+                document.getElementById("message").value.trim();
+
+
+            const subject =
+                `BRUK Project Enquiry — ${service}`;
+
+
+            const body =
+`Hello BRUK,
+
+I would like to discuss a project.
+
+--------------------------------
+CLIENT DETAILS
+--------------------------------
+
+Name: ${name}
+Email: ${email}
+Phone / WhatsApp: ${phone || "Not provided"}
+
+--------------------------------
+PROJECT
+--------------------------------
+
+Service: ${service}
+Budget: ${budget}
+
+--------------------------------
+MESSAGE
+--------------------------------
+
+${message}
+
+--------------------------------
+
+Sent from the BRUK website.`;
+
+
+            const mailto =
+                `mailto:connectbruk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+
+            submitBtn.querySelector("span").textContent =
+                "OPENING EMAIL...";
+
+
+            window.location.href = mailto;
+
+
+            setTimeout(() => {
+
+                submitBtn.querySelector("span").textContent =
+                    "SEND PROJECT →";
+
+            }, 2500);
+
+        });
+
+
+        /* =========================
+           NAVBAR SCROLL
+           ========================= */
+
+        const navbar =
+            document.querySelector(".bruk-navbar");
+
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 30) {
+
+                navbar.style.background =
+                    "rgba(0,0,0,0.72)";
+
+            } else {
+
+                navbar.style.background =
+                    "rgba(0,0,0,0.20)";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

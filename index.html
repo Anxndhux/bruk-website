@@ -4,45 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BRUK — Build Bold, Grow Beyond | Modern Web Development Studio</title>
-  <meta name="description" content="BRUK engineers ultra-fast, award-winning modern websites, enterprise web applications, and bespoke digital platforms. Build bold, Grow Beyond.">
-
-  <!-- Preconnect & Google Fonts -->
+  <meta name="description" content="BRUK engineers premium modern websites, web applications, e-commerce stores, and bespoke digital experiences. Build Bold. Grow Beyond.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/logo-mark.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/onrevv-home.css">
 </head>
-<body>
 
-  <!-- Dynamic Ambient Aura -->
+<body>
   <div class="ambient-gradient"></div>
   <div class="grid-overlay"></div>
-
-  <!-- Custom Cursor Followers -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- Navbar -->
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="#home" class="navbar__brand">
         <img src="assets/logo-mark.png" alt="BRUK" class="navbar__logo">
-        <span class="navbar__wordmark">BRUK</span>
+        <span class="navbar__wordmark-clean">BRUK<span class="navbar__brand-dot"></span></span>
       </a>
 
       <nav class="navbar__nav" id="primaryNav">
-        <a href="#home" class="navbar__link">Home</a>
-        <a href="#services" class="navbar__link">Services</a>
-        <a href="#work" class="navbar__link">Selected Work</a>
-        <a href="#tech-orbit" class="navbar__link">Tech Stack</a>
-        <a href="#estimator" class="navbar__link">Estimator</a>
-        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#home" class="navbar__link is-active">Home<span class="navbar__link-bar"></span></a>
+        <a href="#about-bruk" class="navbar__link">About Us<span class="navbar__link-bar"></span></a>
+        <a href="#work" class="navbar__link">Products<span class="navbar__link-bar"></span></a>
+        <a href="#services" class="navbar__link">Services<span class="navbar__link-bar"></span></a>
+        <a href="contact.html" class="navbar__link">Contact<span class="navbar__link-bar"></span></a>
       </nav>
 
       <div class="navbar__actions">
-        <a href="#estimator" class="btn btn--primary btn--small">Get an Estimate</a>
+       
         <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -50,605 +43,242 @@
     </div>
   </header>
 
-  <!-- HUD Floating Controls -->
-  <div class="hud-bar" id="hudBar">
-    <div class="fps-badge">
-      <span class="fps-dot"></span>
-      <span id="fpsDisplay">60 FPS</span>
-    </div>
-
-    <div class="theme-switcher">
-      <button class="theme-btn is-active" data-theme="cyber" title="Cyber Neon Theme">
-        Cyber
-      </button>
-      <button class="theme-btn" data-theme="matrix" title="Matrix Wireframe Theme">
-        Matrix
-      </button>
-      <button class="theme-btn" data-theme="gold" title="Solar Obsidian Theme">
-        Solar
-      </button>
-      <button class="theme-btn" data-theme="cosmic" title="Cosmic Violet Theme">
-        Cosmic
-      </button>
-    </div>
-
-    <button class="sound-toggle" id="soundToggle" aria-label="Toggle audio effects" title="Click to enable UI sound effects">
-      <div class="sound-wave">
-        <div class="sound-bar"></div>
-        <div class="sound-bar"></div>
-        <div class="sound-bar"></div>
-      </div>
-      <span class="sound-toggle__label">Audio: OFF</span>
-    </button>
-  </div>
-
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <div class="hero__status">
-            <span class="hero__status-dot"></span>
-            <span>ACCEPTING SELECT CLIENTS FOR Q3/Q4</span>
-          </div>
+    <!-- HERO -->
+    <section class="hero bruk-hero" id="home">
+      <div class="bruk-hero__glow bruk-hero__glow--one"></div>
+      <div class="bruk-hero__glow bruk-hero__glow--two"></div>
+      <div class="container bruk-hero__inner">
+        <p class="bruk-kicker reveal-bruk">WEB DEVELOPMENT • DIGITAL EXPERIENCES</p>
+        <h1 class="bruk-hero__title reveal-bruk">
+          Build <span>Bold.</span><br>
+          Grow <span>Beyond.</span>
+        </h1>
+        <p class="bruk-hero__desc reveal-bruk">
+          We create fast, premium websites and digital products that turn ambitious ideas
+          into memorable online experiences.
+        </p>
+        <div class="bruk-hero__actions reveal-bruk">
+          <a href="#choiceModal" class="bruk-btn bruk-btn--light" id="buildWebsiteBtn">BUILD WEBSITE <b>↗</b></a>
+          <a href="contact.html" class="bruk-btn bruk-btn--outline">GET IN TOUCH</a>
+      
+    </section>
 
-          <h1 class="hero__title">
-            BUILD BOLD,
-            <span class="hero__title-gradient">GROW BEYOND.</span>
-          </h1>
-
-          <p class="hero__desc">
-            BRUK engineers award-winning digital platforms, high-performance web applications, and ultra-scalable web products designed to capture attention and multiply conversions.
-          </p>
-
-          <div class="hero__actions">
-            <a href="#work" class="btn btn--primary btn--large">Explore Selected Work →</a>
-            <a href="#estimator" class="btn btn--ghost btn--large">Scope Calculator ⚙</a>
-          </div>
-
-          <div class="hero__stats">
-            <div class="stat-item">
-              <div class="stat-item__num">100%</div>
-              <div class="stat-item__label">Bespoke Architecture</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-item__num">60 FPS</div>
-              <div class="stat-item__label">Hardware Accelerated</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-item__num">99+</div>
-              <div class="stat-item__label">Lighthouse Performance</div>
-            </div>
-          </div>
+    <!-- WHAT IS BRUK -->
+    <section class="bruk-section bruk-about" id="about-bruk">
+      <div class="container">
+        <div class="bruk-section-head reveal-bruk">
+          <p class="bruk-kicker">WHAT IS BRUK?</p>
+          <h2>Ideas into <span>digital reality.</span></h2>
+          <p>Watch our quick overview to see how we design, build, optimize, and launch modern websites and digital solutions.</p>
         </div>
 
-        <div class="interaction-hint">
-          <span class="interaction-hint__icon">✦</span>
-          <span>SELECTIVE ARCHITECTURE • TAILORED FOR SCALE</span>
+        <div class="bruk-presentation reveal-bruk">
+          <div class="bruk-presentation__shape bruk-presentation__shape--a"></div>
+          <div class="bruk-presentation__shape bruk-presentation__shape--b"></div>
+          <div class="bruk-presentation__grid"></div>
+          <button class="bruk-play" type="button" aria-label="Play BRUK presentation">
+            <span>▶</span>
+          </button>
+          <p>CLICK TO WATCH PRESENTATION</p>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services" id="services">
+    <!-- SERVICES -->
+    <section class="bruk-section bruk-services" id="services">
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Capabilities</span>
-          <h2 class="section-title">ENGINEERED FOR THE DIGITAL FRONTIER</h2>
-          <p class="section-sub">We bridge the gap between creative artistry and robust software engineering, building websites that dominate search, speed, and aesthetics.</p>
+        <div class="bruk-section-head reveal-bruk">
+          <p class="bruk-kicker">WHAT WE BUILD</p>
+          <h2>Digital experiences<br><span>made to perform.</span></h2>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <span class="service-card__index">01 / ARCHITECTURE</span>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <h3 class="service-card__title">Interactive Web Platforms</h3>
-            <p class="service-card__desc">Lightning-fast full-stack web applications, progressive web apps, dynamic interactive interfaces, and scalable cloud systems built for modern browsers.</p>
-            <div class="service-card__tags">
-              <span class="service-tag">Next.js 15</span>
-              <span class="service-tag">TypeScript</span>
-              <span class="service-tag">React 19</span>
-              <span class="service-tag">Edge Runtime</span>
-            </div>
+        <div class="bruk-service-grid">
+          <article class="bruk-service reveal-bruk">
+            <span>01</span>
+            <div class="bruk-service__icon">⌘</div>
+            <h3>Business Websites</h3>
+            <p>Premium company websites, portfolios, landing pages and professional digital identities.</p>
+            <div class="bruk-tags"><i>Responsive</i><i>SEO</i><i>Fast</i></div>
           </article>
 
-          <article class="service-card">
-            <span class="service-card__index">02 / FULL-STACK</span>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <h3 class="service-card__title">Full-Stack Web Apps</h3>
-            <p class="service-card__desc">Blazing-fast React &amp; Next.js platforms, headless CMS integrations, robust microservices, and secure API architectures engineered for high traffic.</p>
-            <div class="service-card__tags">
-              <span class="service-tag">Next.js 15</span>
-              <span class="service-tag">React</span>
-              <span class="service-tag">Node.js</span>
-              <span class="service-tag">TypeScript</span>
-            </div>
+          <article class="bruk-service reveal-bruk">
+            <span>02</span>
+            <div class="bruk-service__icon">◈</div>
+            <h3>E-Commerce</h3>
+            <p>High-converting online stores with product management, checkout, payments and smooth UX.</p>
+            <div class="bruk-tags"><i>Stores</i><i>Payments</i><i>CMS</i></div>
           </article>
 
-          <article class="service-card">
-            <span class="service-card__index">03 / COMMERCE</span>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <h3 class="service-card__title">High-Converting Commerce</h3>
-            <p class="service-card__desc">Next-level e-commerce experiences with instant page loads, interactive product customizers, custom checkout funnels, and analytics.</p>
-            <div class="service-card__tags">
-              <span class="service-tag">Headless Shopify</span>
-              <span class="service-tag">Stripe API</span>
-              <span class="service-tag">Interactive Previews</span>
-              <span class="service-tag">Sub-second Latency</span>
-            </div>
+          <article class="bruk-service reveal-bruk">
+            <span>03</span>
+            <div class="bruk-service__icon">✦</div>
+            <h3>UI / UX Design</h3>
+            <p>Clean interfaces, purposeful interactions and visual systems that make brands memorable.</p>
+            <div class="bruk-tags"><i>UI</i><i>UX</i><i>Motion</i></div>
           </article>
 
-          <article class="service-card">
-            <span class="service-card__index">04 / DESIGN</span>
-            <div class="service-card__icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-            </div>
-            <h3 class="service-card__title">UI/UX &amp; Design Systems</h3>
-            <p class="service-card__desc">Futuristic, user-centric interfaces crafted with granular micro-interactions, responsive typography hierarchies, and cohesive design token systems.</p>
-            <div class="service-card__tags">
-              <span class="service-tag">Figma Tokens</span>
-              <span class="service-tag">Design Systems</span>
-              <span class="service-tag">Motion UX</span>
-              <span class="service-tag">Accessibility</span>
-            </div>
+          <article class="bruk-service reveal-bruk">
+            <span>04</span>
+            <div class="bruk-service__icon">⚡</div>
+            <h3>Web Applications</h3>
+            <p>Custom dashboards, booking systems, business platforms and scalable web applications.</p>
+            <div class="bruk-tags"><i>Apps</i><i>APIs</i><i>Cloud</i></div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SELECTED WORK SECTION -->
-    <section class="work" id="work">
+    <!-- PROJECT SHOWCASE -->
+    <section class="bruk-section bruk-work" id="work">
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Portfolio</span>
-          <h2 class="section-title">SELECTED CLIENT WORK</h2>
-          <p class="section-sub">Explore recent flagship web projects engineered with bespoke motion choreography, clean architecture, and high-performance stacks.</p>
+        <div class="bruk-section-head bruk-section-head--center reveal-bruk">
+          <p class="bruk-kicker">SELECTED WORK</p>
+          <h2>Explore our <span>premium projects.</span></h2>
         </div>
 
-        <div class="work-grid">
-          <!-- Project 1 -->
-          <div class="work-card" data-project="aether" style="--card-c1:#151b3b; --card-c2:#0b0e20; --card-glow:#6366f1;">
-            <div class="work-card__screen">
-              <div class="work-card__screen-badge">ENTERPRISE SAAS</div>
-              <div class="work-card__glow-orb"></div>
-              <span class="work-card__centerpiece">AETHER</span>
+        <div class="bruk-projects">
+          <article class="bruk-project bruk-project--big reveal-bruk">
+            <div class="bruk-project__visual bruk-project__visual--commerce">
+              <div class="mini-nav">BRUK STORE <span>HOME • SHOP • ABOUT</span></div>
+              <div class="commerce-title">WHAT IS<br><strong>ECOMMERCE</strong></div>
+              <div class="commerce-pills"><i>ONLINE STORES</i><i>MOBILE SHOPPING</i><i>DIGITAL PAYMENTS</i></div>
             </div>
-            <div class="work-card__info">
-              <div class="work-card__header">
-                <h3 class="work-card__name">Aether Autonomous AI</h3>
-                <span class="work-card__arrow">↗</span>
-              </div>
-              <p class="work-card__cat">AI Hardware Platform &amp; Interactive Neural Cloud Dashboard</p>
-              <div class="work-card__stack">
-                <span class="stack-pill">Next.js 15</span>
-                <span class="stack-pill">TypeScript</span>
-                <span class="stack-pill">WebSockets</span>
-                <span class="stack-pill">Tailwind</span>
-              </div>
-            </div>
-          </div>
+            <div class="bruk-project__info"><small>01 / E-COMMERCE</small><h3>Modern Commerce</h3><b>↗</b></div>
+          </article>
 
-          <!-- Project 2 -->
-          <div class="work-card" data-project="lumina" style="--card-c1:#20180b; --card-c2:#0f0c05; --card-glow:#f59e0b;">
-            <div class="work-card__screen">
-              <div class="work-card__screen-badge">LUXURY E-COMMERCE</div>
-              <div class="work-card__glow-orb"></div>
-              <span class="work-card__centerpiece">LUMINA</span>
+          <article class="bruk-project reveal-bruk">
+            <div class="bruk-project__visual bruk-project__visual--fashion">
+              <div class="fashion-label">FUTURE<br><strong>TRENDS</strong><small>fashion / digital</small></div>
             </div>
-            <div class="work-card__info">
-              <div class="work-card__header">
-                <h3 class="work-card__name">Lumina Horology</h3>
-                <span class="work-card__arrow">↗</span>
-              </div>
-              <p class="work-card__cat">Luxury Timepiece Customizer &amp; Global Headless Store</p>
-              <div class="work-card__stack">
-                <span class="stack-pill">Shopify Plus</span>
-                <span class="stack-pill">React 19</span>
-                <span class="stack-pill">Tailwind</span>
-                <span class="stack-pill">Stripe</span>
-              </div>
-            </div>
-          </div>
+            <div class="bruk-project__info"><small>02 / BRAND EXPERIENCE</small><h3>Future Trends</h3><b>↗</b></div>
+          </article>
 
-          <!-- Project 3 -->
-          <div class="work-card" data-project="synthex" style="--card-c1:#0b221a; --card-c2:#06120d; --card-glow:#10b981;">
-            <div class="work-card__screen">
-              <div class="work-card__screen-badge">HIGH-FREQUENCY FINTECH</div>
-              <div class="work-card__glow-orb"></div>
-              <span class="work-card__centerpiece">SYNTHEX</span>
+          <article class="bruk-project reveal-bruk">
+            <div class="bruk-project__visual bruk-project__visual--business">
+              <div class="business-label">SMART<br><strong>BUSINESS</strong></div>
+              <div class="business-chart"><i></i><i></i><i></i><i></i><i></i></div>
             </div>
-            <div class="work-card__info">
-              <div class="work-card__header">
-                <h3 class="work-card__name">Synthex Protocol</h3>
-                <span class="work-card__arrow">↗</span>
-              </div>
-              <p class="work-card__cat">Decentralized Real-Time Trading Terminal with Ultra-Low Latency Charts</p>
-              <div class="work-card__stack">
-                <span class="stack-pill">React</span>
-                <span class="stack-pill">Rust WASM</span>
-                <span class="stack-pill">Zero-Copy WebSockets</span>
-                <span class="stack-pill">High-Throughput</span>
-              </div>
-            </div>
-          </div>
+            <div class="bruk-project__info"><small>03 / BUSINESS</small><h3>Smart Business</h3><b>↗</b></div>
+          </article>
 
-          <!-- Project 4 -->
-          <div class="work-card" data-project="vortex" style="--card-c1:#280d38; --card-c2:#15061e; --card-glow:#d946ef;">
-            <div class="work-card__screen">
-              <div class="work-card__screen-badge">IMMERSIVE PORTFOLIO</div>
-              <div class="work-card__glow-orb"></div>
-              <span class="work-card__centerpiece">VORTEX</span>
+          <article class="bruk-project bruk-project--wide reveal-bruk">
+            <div class="bruk-project__visual bruk-project__visual--portfolio">
+              <div>CREATIVE<br><strong>PORTFOLIO</strong></div>
             </div>
-            <div class="work-card__info">
-              <div class="work-card__header">
-                <h3 class="work-card__name">Vortex Spatial Studio</h3>
-                <span class="work-card__arrow">↗</span>
-              </div>
-              <p class="work-card__cat">Architectural Firm Portfolio with Audio-Reactive Interactive Showcases</p>
-              <div class="work-card__stack">
-                <span class="stack-pill">Next.js</span>
-                <span class="stack-pill">Web Audio API</span>
-                <span class="stack-pill">GSAP</span>
-                <span class="stack-pill">Tailwind</span>
-              </div>
-            </div>
-          </div>
+            <div class="bruk-project__info"><small>04 / CREATIVE</small><h3>Portfolio Experience</h3><b>↗</b></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- TECH STACK ORBIT SECTION -->
-    <section class="tech-orbit" id="tech-orbit">
+    <!-- PROCESS -->
+    <section class="bruk-section bruk-process" id="process">
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Ecosystem</span>
-          <h2 class="section-title">THE MODERN TECH STACK</h2>
-          <p class="section-sub">We leverage industry-standard frameworks and modern web architectures to deliver buttery smooth 60 FPS experiences.</p>
+        <div class="bruk-section-head reveal-bruk">
+          <p class="bruk-kicker">HOW WE WORK</p>
+          <h2>From idea to <span>launch.</span></h2>
         </div>
 
-        <div class="tech-cluster">
-          <div class="tech-node" data-tech="typescript">
-            <span class="tech-node__icon">TS</span>
-            <span class="tech-node__name">TypeScript</span>
-            <span class="tech-node__metric">Type Safe</span>
-          </div>
-
-          <div class="tech-node" data-tech="react">
-            <span class="tech-node__icon">⚛</span>
-            <span class="tech-node__name">React 19</span>
-            <span class="tech-node__metric">Virtual DOM</span>
-          </div>
-
-          <div class="tech-node" data-tech="nextjs">
-            <span class="tech-node__icon">▲</span>
-            <span class="tech-node__name">Next.js 15</span>
-            <span class="tech-node__metric">SSR / Edge</span>
-          </div>
-
-          <div class="tech-node" data-tech="tailwind">
-            <span class="tech-node__icon">〰</span>
-            <span class="tech-node__name">Tailwind CSS</span>
-            <span class="tech-node__metric">0-Runtime</span>
-          </div>
-
-          <div class="tech-node" data-tech="nodejs">
-            <span class="tech-node__icon">⬡</span>
-            <span class="tech-node__name">Node.js Engine</span>
-            <span class="tech-node__metric">Async IO</span>
-          </div>
-
-          <div class="tech-node" data-tech="wasm">
-            <span class="tech-node__icon">⚡</span>
-            <span class="tech-node__name">WebAssembly</span>
-            <span class="tech-node__metric">Native Speed</span>
-          </div>
-
-          <div class="tech-node" data-tech="graphql">
-            <span class="tech-node__icon">◈</span>
-            <span class="tech-node__name">GraphQL &amp; REST</span>
-            <span class="tech-node__metric">Fast API</span>
-          </div>
-
-          <div class="tech-node" data-tech="vite">
-            <span class="tech-node__icon">⚡</span>
-            <span class="tech-node__name">Vite / Rollup</span>
-            <span class="tech-node__metric">HMR Fast</span>
-          </div>
+        <div class="bruk-process-grid">
+          <div class="bruk-step reveal-bruk"><strong>01</strong><h3>Discover</h3><p>We understand your business, audience and goals.</p></div>
+          <div class="bruk-step reveal-bruk"><strong>02</strong><h3>Design</h3><p>We create a clear visual direction and user experience.</p></div>
+          <div class="bruk-step reveal-bruk"><strong>03</strong><h3>Develop</h3><p>We turn the design into a responsive, functional product.</p></div>
+          <div class="bruk-step reveal-bruk"><strong>04</strong><h3>Launch</h3><p>We test, optimize and help your website go live.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- INTERACTIVE PROJECT ESTIMATOR -->
-    <section class="estimator" id="estimator">
+    <!-- TECH -->
+    <section class="bruk-section bruk-tech" id="tech-orbit">
       <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Interactive Scope Builder</span>
-          <h2 class="section-title">PROJECT ARCHITECTURE &amp; COST ESTIMATOR</h2>
-          <p class="section-sub">Configure your vision in real time. Watch how scope dynamically adjusts the estimated budget, timeline, and architectural complexity.</p>
+        <div class="bruk-section-head bruk-section-head--center reveal-bruk">
+          <p class="bruk-kicker">OUR STACK</p>
+          <h2>Technology behind<br><span>the experience.</span></h2>
         </div>
-
-        <div class="estimator-box">
-          <div class="estimator-controls">
-            <!-- Slider: Pages / Scope -->
-            <div class="control-group">
-              <div class="control-group__label">
-                <span>Platform Scale &amp; Pages</span>
-                <span class="control-group__val" id="pagesValDisplay">5-8 Pages (Standard)</span>
-              </div>
-              <input type="range" min="1" max="4" value="2" class="slider" id="pagesSlider">
-            </div>
-
-            <!-- Chips: Motion & Interaction Complexity -->
-            <div class="control-group">
-              <div class="control-group__label">
-                <span>Interaction &amp; Motion Complexity</span>
-              </div>
-              <div class="chip-options" id="motionChips">
-                <button type="button" class="chip-btn is-active" data-mult="1.0" data-label="Standard Motion &amp; UX">Standard Motion &amp; UX</button>
-                <button type="button" class="chip-btn" data-mult="1.35" data-label="Advanced Interactive Flows">Advanced Interactive Flows</button>
-                <button type="button" class="chip-btn" data-mult="1.7" data-label="High-End Micro-Animations">High-End Micro-Animations</button>
-              </div>
-            </div>
-
-            <!-- Chips: Backend & CMS -->
-            <div class="control-group">
-              <div class="control-group__label">
-                <span>Backend Architecture</span>
-              </div>
-              <div class="chip-options" id="backendChips">
-                <button type="button" class="chip-btn is-active" data-cost="0" data-label="Static / Headless CMS">Static / Headless CMS</button>
-                <button type="button" class="chip-btn" data-cost="20000" data-label="Full-Stack Auth &amp; Database">Full-Stack Auth &amp; DB (+₹20k)</button>
-                <button type="button" class="chip-btn" data-cost="40000" data-label="Custom AI / Realtime APIs">Custom AI / Realtime (+₹40k)</button>
-              </div>
-            </div>
-
-            <!-- Chips: Deployment & SLA -->
-            <div class="control-group">
-              <div class="control-group__label">
-                <span>Speed &amp; Production Tier</span>
-              </div>
-              <div class="chip-options" id="tierChips">
-                <button type="button" class="chip-btn is-active" data-tier="standard">Standard Sprint</button>
-                <button type="button" class="chip-btn" data-tier="priority">Priority Accelerated (+25%)</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Summary Card -->
-          <div class="estimator-summary">
-            <span class="summary-heading">Live Investment Scope</span>
-            <div class="summary-price" id="estimatedPrice">₹45,000</div>
-
-            <div class="summary-meta">
-              <div class="meta-row">
-                <span>Estimated Turnaround:</span>
-                <span id="estimatedTimeline">3 - 4 Weeks</span>
-              </div>
-              <div class="meta-row">
-                <span>Recommended Stack:</span>
-                <span id="recommendedStack">Next.js 15 + React 19 + Vercel Edge</span>
-              </div>
-              <div class="meta-row">
-                <span>Deliverables:</span>
-                <span>High-Speed UX, CMS, SEO, Full IP Rights</span>
-              </div>
-            </div>
-
-            <a href="#contact" class="btn btn--primary" id="applyScopeBtn">Export Scope to Brief →</a>
-          </div>
+        <div class="bruk-tech-cloud reveal-bruk">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span>
+          <span>Express</span><span>MongoDB</span><span>Spring Boot</span><span>Flutter</span>
+          <span>GitHub</span><span>Vercel</span>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS TIMELINE -->
-    <section class="process">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Methodology</span>
-          <h2 class="section-title">FROM BLUEPRINT TO GLOBAL LAUNCH</h2>
-          <p class="section-sub">A battle-tested 4-phase agile engineering sprint that ensures zero surprises and rapid deployment.</p>
-        </div>
-
-        <div class="process-list">
-          <div class="process-step">
-            <span class="process-step__num">01</span>
-            <h3 class="process-step__title">Discovery &amp; Blueprint</h3>
-            <p class="process-step__text">We audit your target market, map technical requirements, and architect the design system, user funnels, and component hierarchy.</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-step__num">02</span>
-            <h3 class="process-step__title">Interactive Prototyping</h3>
-            <p class="process-step__text">We design interactive UX wireframes, craft pixel-perfect design systems, and build Figma prototypes to validate interactions before coding.</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-step__num">03</span>
-            <h3 class="process-step__title">Engineering Sprint</h3>
-            <p class="process-step__text">Clean, componentized TypeScript &amp; Next.js development with hardware-accelerated animations and high-security API integrations.</p>
-          </div>
-
-          <div class="process-step">
-            <span class="process-step__num">04</span>
-            <h3 class="process-step__title">Audit &amp; Global Launch</h3>
-            <p class="process-step__text">Stress testing across 50+ devices, Lighthouse 99+ optimizations, CDN edge caching setup, and seamless DNS cutover.</p>
-          </div>
-        </div>
+    <!-- CTA -->
+    <section class="bruk-cta">
+      <div class="bruk-cta__orb bruk-cta__orb--left"></div>
+      <div class="bruk-cta__orb bruk-cta__orb--right"></div>
+      <div class="container bruk-cta__inner">
+        <p class="bruk-kicker reveal-bruk">LET'S BUILD SOMETHING</p>
+        <h2 class="reveal-bruk">Take control of your<br>digital presence with <span>BRUK.</span></h2>
+        <p class="reveal-bruk">No boring templates. No ordinary websites. Just digital experiences built around your business.</p>
+        <a href="#choiceModal" class="bruk-btn bruk-btn--light reveal-bruk">GET STARTED WITH BRUK <b>↗</b></a>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testimonials">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-tag">Proof</span>
-          <h2 class="section-title">BUILT FOR INDUSTRY LEADERS</h2>
-          <p class="section-sub">Read what founders, CTOs, and product directors say about collaborating with BRUK.</p>
-        </div>
+    
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <p class="testimonial__quote">"The interactive web platform BRUK built increased our average session duration by 340% and doubled qualified inbound demo requests in month one."</p>
-            <div class="testimonial__author-box">
-              <div class="testimonial__avatar">AT</div>
-              <div>
-                <div class="testimonial__name">Alexander Thorne</div>
-                <div class="testimonial__role">VP of Product, Aether AI</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <p class="testimonial__quote">"Not only is the aesthetic jaw-dropping, but our Lighthouse performance score is literally 100. Rare to find engineers who master both art and raw speed."</p>
-            <div class="testimonial__author-box">
-              <div class="testimonial__avatar">EL</div>
-              <div>
-                <div class="testimonial__name">Elena Vance</div>
-                <div class="testimonial__role">Creative Director, Vortex Studio</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <p class="testimonial__quote">"BRUK delivered our custom luxury storefront two weeks ahead of schedule. The interactive watch customizer is hands down the best in our industry."</p>
-            <div class="testimonial__author-box">
-              <div class="testimonial__avatar">MK</div>
-              <div>
-                <div class="testimonial__name">Marcus Keller</div>
-                <div class="testimonial__role">Founder &amp; CEO, Lumina Horology</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- Existing case study modal -->
+    <div class="modal-backdrop" id="caseStudyModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+        <div id="modalBody"></div>
       </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-wrap">
-          <div class="contact-info">
-            <div>
-              <span class="section-tag">Let's Connect</span>
-              <h2 class="section-title">HAVE A VISION?<br>LET'S BRING IT TO LIFE.</h2>
-              <p class="section-sub">Whether you need a high-impact web application, a scalable e-commerce hub, or a bespoke enterprise platform, we are ready.</p>
-            </div>
-
-            <div class="contact-details">
-              <div class="contact-pill">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <a href="mailto:connectbruk@gmail.com" style="color:inherit; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='inherit'">connectbruk@gmail.com</a>
-              </div>
-              <div class="contact-pill">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                <a href="https://instagram.com/bruk.creates" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='inherit'">@bruk.creates</a>
-              </div>
-              <div class="contact-pill">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Response Time: Under 12 Hours</span>
-              </div>
-              <div class="contact-pill">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Global Remote Engineering</span>
-              </div>
-            </div>
-          </div>
-
-          <form class="contact-form" id="projectForm">
-            <div class="form-group">
-              <label class="form-label" for="clientName">Your Name / Company *</label>
-              <input type="text" id="clientName" class="form-input" placeholder="e.g. Sarah Connor, TechCorp" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="clientEmail">Email Address *</label>
-              <input type="email" id="clientEmail" class="form-input" placeholder="sarah@company.com" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Approximate Budget Range</label>
-              <div class="budget-chips" id="budgetChips">
-                <button type="button" class="budget-chip" data-budget="₹25k - ₹50k">₹25k - ₹50k</button>
-                <button type="button" class="budget-chip is-active" data-budget="₹50k - ₹1L">₹50k - ₹1L</button>
-                <button type="button" class="budget-chip" data-budget="₹1L - ₹2.5L">₹1L - ₹2.5L</button>
-                <button type="button" class="budget-chip" data-budget="₹2.5L+">₹2.5L+</button>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="projectScope">Project Details / Goals</label>
-              <textarea id="projectScope" class="form-textarea" placeholder="Tell us about the project, timeline, and key goals..."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary btn--large" id="submitBtn">
-              Transmit Project Brief →
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <!-- CASE STUDY MODAL -->
-  <div class="modal-backdrop" id="caseStudyModal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
-      <div id="modalBody">
-        <!-- Injected via JavaScript -->
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#home" class="footer__logo-link">
-          <img src="assets/logo-mark.png" alt="BRUK" class="navbar__logo">
-          <span class="navbar__wordmark">BRUK</span>
+          <span class="navbar__wordmark-clean">BRUK<span class="navbar__brand-dot">.</span></span>
         </a>
-        <p class="footer__desc">
-          Next-generation web development studio crafting high-performance modern websites, web applications, and bespoke digital experiences.
-        </p>
+        <p class="footer__desc">Next-generation web development studio crafting high-performance websites, web applications, and bespoke digital experiences.</p>
       </div>
-
       <div class="footer__col">
         <h4 class="footer__heading">Navigation</h4>
         <div class="footer__links">
-          <a href="#home" class="footer__link">Home</a>
-          <a href="#services" class="footer__link">Services</a>
-          <a href="#work" class="footer__link">Selected Work</a>
-          <a href="#tech-orbit" class="footer__link">Tech Stack</a>
-          <a href="#estimator" class="footer__link">Cost Estimator</a>
-          <a href="#contact" class="footer__link">Contact</a>
+          <a href="#home" class="footer__link">Home</a><a href="#about-bruk" class="footer__link">About Us</a>
+          <a href="#work" class="footer__link">Products</a><a href="#services" class="footer__link">Services</a>
+          <a href="#tech-orbit" class="footer__link">Tech Stack</a><a href="contact.html" class="footer__link">Contact</a>
         </div>
       </div>
-
       <div class="footer__col">
         <h4 class="footer__heading">Social &amp; Inquiries</h4>
         <div class="footer__links">
           <a href="mailto:connectbruk@gmail.com" class="footer__link">connectbruk@gmail.com</a>
           <a href="https://instagram.com/bruk.creates" target="_blank" rel="noopener noreferrer" class="footer__link">Instagram (@bruk.creates)</a>
-          <a href="#" class="footer__link">LinkedIn</a>
-          <a href="#" class="footer__link">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn</a>
+          <a href="https://github.com/Anxndhux" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub</a>
         </div>
       </div>
     </div>
-
     <div class="container footer__bottom">
       <p>&copy; 2026 BRUK Digital Studio. All rights reserved.</p>
-      <p>Hardware-Accelerated Motion • 60 FPS Guarantee</p>
+      <p>Build Bold • Grow Beyond</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/audio.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealItems = document.querySelectorAll('.reveal-bruk');
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(el => revealObserver.observe(el));
+
+      const play = document.querySelector('.bruk-play');
+      if (play) play.addEventListener('click', () => {
+        alert('Add your BRUK presentation video here.');
+      });
+    });
+  </script>
 </body>
 </html>

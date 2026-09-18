@@ -99,6 +99,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Active nav link scrollspy
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.navbar__link');
+
+  function updateActiveNavLink() {
+    const scrollY = window.pageYOffset;
+    const navHeight = navbar ? navbar.offsetHeight : 70;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - navHeight - 120;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove('is-active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('is-active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+
   // Smooth scroll for internal anchors
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
@@ -313,6 +339,121 @@ document.addEventListener('DOMContentLoaded', function () {
       if (projectKey) openCaseStudy(projectKey);
     });
   });
+
+  /* =========================================================
+     6b. Choose Your Website Type Modal (Onrevv Model)
+     ========================================================= */
+  const choiceModal = document.getElementById('choiceModal');
+  const choiceModalClose = document.getElementById('choiceModalClose');
+  const choiceModalMobileClose = document.getElementById('choiceModalMobileClose');
+  const buildWebsiteBtn = document.getElementById('buildWebsiteBtn');
+  const navGetStartedBtn = document.getElementById('navGetStartedBtn');
+  const chooseBusinessBtn = document.getElementById('chooseBusinessBtn');
+  const chooseStoreBtn = document.getElementById('chooseStoreBtn');
+
+  function openChoiceModal(e) {
+    if (e) e.preventDefault();
+    playClick();
+    if (!choiceModal) return;
+    choiceModal.classList.add('is-open');
+    choiceModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeChoiceModal() {
+    if (!choiceModal) return;
+    playClick();
+    choiceModal.classList.remove('is-open');
+    choiceModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (buildWebsiteBtn) buildWebsiteBtn.addEventListener('click', openChoiceModal);
+  if (navGetStartedBtn) navGetStartedBtn.addEventListener('click', openChoiceModal);
+  if (choiceModalClose) choiceModalClose.addEventListener('click', closeChoiceModal);
+  if (choiceModalMobileClose) choiceModalMobileClose.addEventListener('click', closeChoiceModal);
+
+  if (choiceModal) {
+    choiceModal.addEventListener('click', function (e) {
+      if (e.target === choiceModal) closeChoiceModal();
+    });
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && choiceModal && choiceModal.classList.contains('is-open')) {
+      closeChoiceModal();
+    }
+  });
+
+  // Handle Business Website selection
+  if (chooseBusinessBtn) {
+    chooseBusinessBtn.addEventListener('click', function () {
+      playClick();
+      chooseBusinessBtn.classList.add('is-selected');
+      const actionSpan = chooseBusinessBtn.querySelector('.choice-card__action');
+      if (actionSpan) actionSpan.textContent = 'CONFIGURING...';
+
+      setTimeout(() => {
+        closeChoiceModal();
+        chooseBusinessBtn.classList.remove('is-selected');
+        if (actionSpan) actionSpan.textContent = 'DEPLOY PROFILE →';
+
+        // Configure Estimator for Business / Portfolio
+        if (pagesSlider) {
+          pagesSlider.value = 2;
+          pagesSlider.dispatchEvent(new Event('input'));
+        }
+        const projectScope = document.getElementById('projectScope');
+        if (projectScope) {
+          projectScope.value = '[Goal: Business Website / Portfolio]\nWe want to launch a modern, ultra-fast business website with clean interactive aesthetics and mobile optimization.';
+        }
+
+        const estimatorSection = document.getElementById('estimator');
+        if (estimatorSection) {
+          const navHeight = navbar ? navbar.offsetHeight : 70;
+          const targetPos = estimatorSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      }, 350);
+    });
+  }
+
+  // Handle E-commerce Store selection
+  if (chooseStoreBtn) {
+    chooseStoreBtn.addEventListener('click', function () {
+      playClick();
+      chooseStoreBtn.classList.add('is-selected');
+      const actionSpan = chooseStoreBtn.querySelector('.choice-card__action');
+      if (actionSpan) actionSpan.textContent = 'CONFIGURING...';
+
+      setTimeout(() => {
+        closeChoiceModal();
+        chooseStoreBtn.classList.remove('is-selected');
+        if (actionSpan) actionSpan.textContent = 'DEPLOY STORE →';
+
+        // Configure Estimator for E-commerce
+        if (pagesSlider) {
+          pagesSlider.value = 3;
+          pagesSlider.dispatchEvent(new Event('input'));
+        }
+        if (backendChips) {
+          const chips = backendChips.querySelectorAll('.chip-btn');
+          if (chips && chips[1]) chips[1].click();
+        }
+        const projectScope = document.getElementById('projectScope');
+        if (projectScope) {
+          projectScope.value = '[Goal: E-Commerce Store]\nWe want to launch a high-converting online store with seamless checkout, product customizer, and payment integrations.';
+        }
+
+        const estimatorSection = document.getElementById('estimator');
+        if (estimatorSection) {
+          const navHeight = navbar ? navbar.offsetHeight : 70;
+          const targetPos = estimatorSection.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      }, 350);
+    });
+  }
 
   /* =========================================================
      7. Tech Orbit Node Click Sounds
